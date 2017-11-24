@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.main-header {
+  position: absolute;
+  bottom: 100px;
+  left: 40px;
+  h1 {
+    font-size: 70px;
+  }
+}

@@ -1,6 +1,30 @@
-<div class="main-background">
-  <h1>Our Cocktails</h1>
-  <% @cocktails.each do |cocktail| %>
-  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-  <% end %>
+<div class="banner" style="background-image: url('http://static1.villaschweppes.com/articles/7/13/7/@/33956-blue-lagoon-le-cocktail-du-reve-bleu-article_top-1.jpg');">
+  <%= render 'shared/navbar' %>
+
+  <div class="main-header">
+    <h1>Our Cocktails</h1>
+  </div>
+
+  <div class="container">
+    <div class="cocktails-container">
+      <% @cocktails.each do |cocktail| %>
+        <div class="row">
+          <div class="col-xs-12 col-md-offset-9 col-md-3">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2><%= cocktail.name %></h2>
+              </div>
+              <div class="card-link" >
+                <%= link_to cocktail.name, cocktail_path(cocktail) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="empty-container">
+    </div>
+  </div>
 </div>
