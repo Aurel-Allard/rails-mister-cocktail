@@ -1,5 +1,6 @@
-<h1>Our Cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-<h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-<% end %>
-<!-- <p><%= "Add a drink" %></p> -->
+<div class="main-background">
+  <h1>Our Cocktails</h1>
+  <% @cocktails.each do |cocktail| %>
+  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+  <% end %>
+</div>
